@@ -5,6 +5,6 @@ def print_matrix_integer(matrix=[[]]):
         j = 0
         while j < len(matrix[i]):
             print("{:d}".format(matrix[i][j]), end = " ")
-        j += 1
+            j += 1
         print()
         i += 1
