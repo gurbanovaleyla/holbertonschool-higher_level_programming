@@ -8,11 +8,13 @@ def roman_to_int(roman_string):
     }
     result = 0
     for i in range(len(roman_string)):
+        cur = roman_numbers[roman_string[i]]
         if i < len(roman_string) - 1:
-            if roman_numbers[roman_string[i]] < roman_numbers[roman_string[i + 1]]:
-                result -= roman_numbers[roman_string[i]]
+            nxt = roman_numbers[roman_string[i + 1]]
+            if cur < nxt:
+                result -= cur
             else:
-                result += roman_numbers[roman_string[i]]
+                result += cur
         else:
-            result += roman_numbers[roman_string[i]]
+            result += cur
     return result
