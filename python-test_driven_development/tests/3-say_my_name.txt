@@ -11,7 +11,7 @@ Import the function:
 Normal cases:
 
     >>> say_my_name("John", "Smith")
-	My name is John Smith
+    My name is John Smith
 
     >>> say_my_name("Walter", "White")
     My name is Walter White
