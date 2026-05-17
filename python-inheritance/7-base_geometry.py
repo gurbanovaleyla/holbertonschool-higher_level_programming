@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module defines a base geometry class with basic validation tools."""
 
+
 class BaseGeometry:
     """A base class for geometry-related operations."""
 
