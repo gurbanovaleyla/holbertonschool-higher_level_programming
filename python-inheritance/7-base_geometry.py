@@ -6,7 +6,7 @@ Module that defines a BaseGeometry class.
 
 class BaseGeometry:
     """
-    BaseGeometry class with validation utilities.
+    BaseGeometry class with basic validation methods.
     """
 
     def area(self):
@@ -27,9 +27,7 @@ class BaseGeometry:
             TypeError: if value is not an integer
             ValueError: if value is <= 0
         """
-
-        # STRICT integer check (rejects bool too)
-        if not isinstance(value, int) or isinstance(value, bool):
+        if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
 
         if value <= 0:
