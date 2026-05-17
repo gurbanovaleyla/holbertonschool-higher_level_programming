@@ -6,12 +6,12 @@ Module that defines a BaseGeometry class.
 
 class BaseGeometry:
     """
-    Base class for geometry operations.
+    BaseGeometry class with validation utilities.
     """
 
     def area(self):
         """
-        Raises an exception because area is not implemented.
+        Raises an Exception because area is not implemented.
         """
         raise Exception("area() is not implemented")
 
@@ -20,14 +20,17 @@ class BaseGeometry:
         Validates that value is a positive integer.
 
         Args:
-            name (str): name of the variable
+            name (str): variable name
             value (int): value to validate
 
         Raises:
             TypeError: if value is not an integer
             ValueError: if value is <= 0
         """
-        if type(value) is not int:
+
+        # STRICT integer check (rejects bool too)
+        if not isinstance(value, int) or isinstance(value, bool):
             raise TypeError(f"{name} must be an integer")
+
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
