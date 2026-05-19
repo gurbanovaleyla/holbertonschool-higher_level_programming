@@ -2,6 +2,7 @@
 >>> bg = BaseGeometry()
 
 >>> bg.integer_validator("my_int", 12)
+
 >>> bg.integer_validator("width", 89)
 
 >>> try:
@@ -21,3 +22,9 @@
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [ValueError] distance must be greater than 0
+
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[Exception] area() is not implemented
