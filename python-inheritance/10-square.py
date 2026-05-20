@@ -2,7 +2,7 @@
 """This module represents Square class that
 inherits out of Rectangle and finds area."""
 
-Square = __import__('9-rectangle').Square
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
