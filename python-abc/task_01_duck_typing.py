@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""This module represents abstract classes and duck typing."""
+"""Module that demonstrates abstract classes and duck typing."""
 
 from abc import ABC, abstractmethod
 import math
 
 
 class Shape(ABC):
-    """An abstract base class for shapes."""
+    """Abstract base class for shapes."""
 
     @abstractmethod
     def area(self):
@@ -20,7 +20,7 @@ class Shape(ABC):
 
 
 class Circle(Shape):
-    """A class that inherits from Shspe."""
+    """Circle class that inherits from Shape."""
 
     def __init__(self, radius):
         """Initialize a circle with a radius."""
@@ -36,10 +36,10 @@ class Circle(Shape):
 
 
 class Rectangle(Shape):
-    """A class that inherits from Shape."""
+    """Rectangle class that inherits from Shape."""
 
     def __init__(self, width, height):
-        """Initialize rectangle with width and height."""
+        """Initialize a rectangle with width and height."""
         self.width = width
         self.height = height
 
@@ -53,6 +53,6 @@ class Rectangle(Shape):
 
 
 def shape_info(shape):
-    """Print the area and perimeter of the shape."""
+    """Print the area and perimeter of a shape."""
     print("Area: {}".format(shape.area()))
     print("Perimeter: {}".format(shape.perimeter()))
