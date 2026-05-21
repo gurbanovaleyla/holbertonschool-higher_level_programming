@@ -21,7 +21,7 @@ class Student:
         """
         obj_dict = self.__dict__
 
-        if isinstance(attrs, dict):
+        if isinstance(attrs, list):
             filtered_dict = {}
             for key in attrs:
                 if key in obj_dict:
