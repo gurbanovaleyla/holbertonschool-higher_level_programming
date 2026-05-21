@@ -3,30 +3,31 @@ import xml.etree.ElementTree as ET
 
 
 def serialize_to_xml(dictionary, filename):
-    root = ET.Element("data")
+    try:
+        root = ET.Element("data")
 
-    for key, value in dictionary.items():
-        child = ET.SubElement(root, key)
+        for key, value in dictionary.items():
+            child = ET.SubElement(root, key)
+            child.text = str(value)
 
-        child.text = str(value)
+        tree = ET.ElementTree(root)
+        tree.write(filename, encoding="utf-8")
 
-    tree = ET.ElementTree(root)
-
-    tree.write(filename)
+    except Exception:
+        return None
 
 
 def deserialize_from_xml(filename):
     try:
         tree = ET.parse(filename)
+        root = tree.getroot()
 
-    root = tree.getroot()
+        result = {}
 
-    result = {}
+        for child in root:
+            result[child.tag] = child.text
 
-    for child in root:
-        result[child.tag] = child.text
-
-    return result
+        return result
 
     except Exception:
         return None
