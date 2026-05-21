@@ -8,4 +8,5 @@ import json
 
 def load_from_json_file(filename):
     """Create an object from a JSON file."""
-    return json.load(f)
+    with open(filename, "r", encoding="UTF-8") as f:
+        return json.load(f)
