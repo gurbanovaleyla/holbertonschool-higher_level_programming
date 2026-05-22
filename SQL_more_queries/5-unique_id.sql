@@ -1,5 +1,6 @@
 -- creates table unique_id with UNIQUE constraint on id and default value 1
-CREATE TABLE IF NOT unique_id (
+
+CREATE TABLE IF NOT EXISTS unique_id (
     id INT DEFAULT 1 UNIQUE,
     name VARCHAR(256)
 );
