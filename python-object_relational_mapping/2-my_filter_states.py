@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Lists states filtered by user input."""
 import MySQLdb
 from sys import argv
 
