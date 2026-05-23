@@ -12,10 +12,9 @@ if __name__ == "__main__":
             db=argv[3])
 
     cursor = connection.cursor()
-    query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id"
-
     cursor.execute(
-            query, (argv[4],))
+            "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id"
+            .format(argv[4]))
 
     records = cursor.fetchall()
     for record in records:
